@@ -7,6 +7,8 @@ table (feat.question_features), and the text features from the same Python
 function (odds.textfeat.text_features). There is no second implementation.
 """
 import json
+import os
+from pathlib import Path
 from datetime import datetime
 from functools import lru_cache
 
@@ -19,7 +21,7 @@ from .db import ROOT, connect
 from .dataset import HISTORY_FEATURES
 from .textfeat import text_features
 
-MODELS = ROOT / "models"
+MODELS = Path(os.environ.get("ODDS_MODELS", ROOT / "models"))
 
 
 class Draft(BaseModel):
