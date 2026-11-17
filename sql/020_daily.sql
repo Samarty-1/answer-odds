@@ -72,7 +72,9 @@ WITH ev AS (
     FROM posts WHERE post_type_id = 2 AND owner_user_id IS NOT NULL
     UNION ALL
     -- up-votes (type 2) and accepts (type 1) received on the user's posts
-    SELECT p.owner_user_id, v.creation_date::date, 0, 0, 0, 0,
+    -- A vote can never be known before the post exists: file it no earlier than the post's day.
+    -- (Zero votes predate their post in the 2024 dump; this keeps it true for any input.)
+    SELECT p.owner_user_id, greatest(v.creation_date::date, p.creation_date::date), 0, 0, 0, 0,
            (v.vote_type_id = 2)::int, (v.vote_type_id = 1)::int
     FROM votes v JOIN posts p ON p.id = v.post_id
     WHERE v.vote_type_id IN (1, 2) AND p.owner_user_id IS NOT NULL

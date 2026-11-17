@@ -1,0 +1,266 @@
+{
+  "rows": {
+    "train": 337709,
+    "validation": 23824
+  },
+  "models": {
+    "B0 constant": {
+      "auc": 0.5,
+      "brier": 0.270884137425186,
+      "log_loss": 0.7376130922650849,
+      "mean_predicted": 0.6648208960969356,
+      "observed_rate": 0.5190564137004701
+    },
+    "B1 site rate": {
+      "auc": 0.5004279741633593,
+      "brier": 0.24985385529746904,
+      "log_loss": 0.6928556616620769,
+      "mean_predicted": 0.518698337466101,
+      "observed_rate": 0.5190564137004701
+    },
+    "B2 tag rate": {
+      "auc": 0.6083306570612211,
+      "brier": 0.24173281337981492,
+      "log_loss": 0.690867092337124,
+      "mean_predicted": 0.5081543832571348,
+      "observed_rate": 0.5190564137004701
+    },
+    "M1 logistic": {
+      "chosen": {
+        "config": {
+          "C": 0.01
+        },
+        "auc": 0.6225312201398399,
+        "brier": 0.2392726425326149,
+        "log_loss": 0.6718930846339314,
+        "mean_predicted": 0.49087320514821886,
+        "observed_rate": 0.5190564137004701,
+        "seconds": 2.0
+      },
+      "tried": [
+        {
+          "config": {
+            "C": 0.01
+          },
+          "auc": 0.6225312201398399,
+          "brier": 0.2392726425326149,
+          "log_loss": 0.6718930846339314,
+          "mean_predicted": 0.49087320514821886,
+          "observed_rate": 0.5190564137004701,
+          "seconds": 2.0
+        },
+        {
+          "config": {
+            "C": 0.1
+          },
+          "auc": 0.6224838701672645,
+          "brier": 0.23931221773065356,
+          "log_loss": 0.6720001147463668,
+          "mean_predicted": 0.4907840849275569,
+          "observed_rate": 0.5190564137004701,
+          "seconds": 2.2
+        },
+        {
+          "config": {
+            "C": 1.0
+          },
+          "auc": 0.6224406418795877,
+          "brier": 0.2393216372276238,
+          "log_loss": 0.6720286736783537,
+          "mean_predicted": 0.49089291062500257,
+          "observed_rate": 0.5190564137004701,
+          "seconds": 1.8
+        },
+        {
+          "config": {
+            "C": 10.0
+          },
+          "auc": 0.6224713145552192,
+          "brier": 0.2393093928647863,
+          "log_loss": 0.6719951867598051,
+          "mean_predicted": 0.4909378982351351,
+          "observed_rate": 0.5190564137004701,
+          "seconds": 2.0
+        }
+      ]
+    },
+    "M2 LightGBM": {
+      "chosen": {
+        "config": {
+          "num_leaves": 63,
+          "min_child_samples": 50,
+          "reg_lambda": 0.0
+        },
+        "rounds": 214,
+        "auc": 0.6323388187595496,
+        "brier": 0.236260919684589,
+        "log_loss": 0.6647111139793731,
+        "mean_predicted": 0.49929211813131635,
+        "observed_rate": 0.5190564137004701,
+        "seconds": 3.3
+      },
+      "tried": [
+        {
+          "config": {
+            "num_leaves": 15,
+            "min_child_samples": 50,
+            "reg_lambda": 0.0
+          },
+          "rounds": 430,
+          "auc": 0.6321421424015595,
+          "brier": 0.23629976164387145,
+          "log_loss": 0.6647668473798499,
+          "mean_predicted": 0.4983960751119851,
+          "observed_rate": 0.5190564137004701,
+          "seconds": 3.6
+        },
+        {
+          "config": {
+            "num_leaves": 15,
+            "min_child_samples": 50,
+            "reg_lambda": 10.0
+          },
+          "rounds": 497,
+          "auc": 0.6318484158911053,
+          "brier": 0.2363924287258184,
+          "log_loss": 0.6649396610213368,
+          "mean_predicted": 0.49698179893295735,
+          "observed_rate": 0.5190564137004701,
+          "seconds": 4.1
+        },
+        {
+          "config": {
+            "num_leaves": 15,
+            "min_child_samples": 200,
+            "reg_lambda": 0.0
+          },
+          "rounds": 411,
+          "auc": 0.6319454307551714,
+          "brier": 0.2364150052784713,
+          "log_loss": 0.6649958240481001,
+          "mean_predicted": 0.49616018982844123,
+          "observed_rate": 0.5190564137004701,
+          "seconds": 3.3
+        },
+        {
+          "config": {
+            "num_leaves": 15,
+            "min_child_samples": 200,
+            "reg_lambda": 10.0
+          },
+          "rounds": 501,
+          "auc": 0.6318843112496562,
+          "brier": 0.23634070297476467,
+          "log_loss": 0.664825667856706,
+          "mean_predicted": 0.49758323086102724,
+          "observed_rate": 0.5190564137004701,
+          "seconds": 4.0
+        },
+        {
+          "config": {
+            "num_leaves": 63,
+            "min_child_samples": 50,
+            "reg_lambda": 0.0
+          },
+          "rounds": 214,
+          "auc": 0.6323388187595496,
+          "brier": 0.236260919684589,
+          "log_loss": 0.6647111139793731,
+          "mean_predicted": 0.49929211813131635,
+          "observed_rate": 0.5190564137004701,
+          "seconds": 3.3
+        },
+        {
+          "config": {
+            "num_leaves": 63,
+            "min_child_samples": 50,
+            "reg_lambda": 10.0
+          },
+          "rounds": 236,
+          "auc": 0.631265853842174,
+          "brier": 0.2362897041944593,
+          "log_loss": 0.6647289516445856,
+          "mean_predicted": 0.5004187779515171,
+          "observed_rate": 0.5190564137004701,
+          "seconds": 3.6
+        },
+        {
+          "config": {
+            "num_leaves": 63,
+            "min_child_samples": 200,
+            "reg_lambda": 0.0
+          },
+          "rounds": 222,
+          "auc": 0.6317701462241117,
+          "brier": 0.23633529636407918,
+          "log_loss": 0.6648552349593381,
+          "mean_predicted": 0.49886801665648406,
+          "observed_rate": 0.5190564137004701,
+          "seconds": 3.6
+        },
+        {
+          "config": {
+            "num_leaves": 63,
+            "min_child_samples": 200,
+            "reg_lambda": 10.0
+          },
+          "rounds": 231,
+          "auc": 0.6318173197546966,
+          "brier": 0.2361905515947073,
+          "log_loss": 0.6645252851638946,
+          "mean_predicted": 0.5010632661137319,
+          "observed_rate": 0.5190564137004701,
+          "seconds": 5.5
+        }
+      ]
+    },
+    "M3 text only": {
+      "chosen": {
+        "config": {
+          "alpha": 1e-05
+        },
+        "auc": 0.6317714095487639,
+        "brier": 0.24206204311343554,
+        "log_loss": 0.6784067424521225,
+        "mean_predicted": 0.5817854025832063,
+        "observed_rate": 0.5190564137004701,
+        "seconds": 84.2
+      },
+      "tried": [
+        {
+          "config": {
+            "alpha": 1e-06
+          },
+          "auc": 0.6194517780793383,
+          "brier": 0.2523262494181791,
+          "log_loss": 0.7088101433090245,
+          "mean_predicted": 0.5569873807470136,
+          "observed_rate": 0.5190564137004701,
+          "seconds": 93.4
+        },
+        {
+          "config": {
+            "alpha": 1e-05
+          },
+          "auc": 0.6317714095487639,
+          "brier": 0.24206204311343554,
+          "log_loss": 0.6784067424521225,
+          "mean_predicted": 0.5817854025832063,
+          "observed_rate": 0.5190564137004701,
+          "seconds": 84.2
+        },
+        {
+          "config": {
+            "alpha": 0.0001
+          },
+          "auc": 0.6234614611310858,
+          "brier": 0.24701671607457026,
+          "log_loss": 0.6875543378156805,
+          "mean_predicted": 0.6131139326070404,
+          "observed_rate": 0.5190564137004701,
+          "seconds": 77.7
+        }
+      ]
+    }
+  }
+}
